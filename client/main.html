@@ -2,10 +2,17 @@
 	{{> yield "navigation"}}
 	<div class="container">
 		<div class="text-center"> 
-			<h5>#CANAL GENERAL</h5>	
+			<h5># PUBLIC ROOM</h5>	
 		</div>
 		<!--{{> user}}-->
-		{{> messages}}
-		{{> insertMessage}}
+		<div class="row">
+			<div class="col-md-3 box ">
+				{{> available_user_list}}
+			</div>
+			<div class="col-md-9 box ">
+				{{> messages}}
+			</div>
+		</div>
+			{{> insertMessage}}	
 	</div>
 </template>
