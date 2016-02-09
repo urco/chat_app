@@ -1,10 +1,10 @@
 <template name="messages">		
 			{{#each messages}}		
 				  <div class="message">
-						<a class="js-user" href="/chat/{{_id}}">
+						<a class="js-user" href="/chat/{{user}}">
 							<img class="message-profile-pic" src="ava1.jpg">
 						</a>
-						<a href="/chat/{{_id}}" class="message_username">{{username}}</a>
+						<a href="/chat/{{user}}" class="message_username">{{username}}</a>
 						<span class="message_timestamp">{{createdAt}}</span>
 						<p class="message_content">{{text}}</p>
  				  </div>

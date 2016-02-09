@@ -13,7 +13,12 @@ Template.user.helpers ({
 Template.messages.helpers({ 
   messages: function(){
   	  return Messages.find();
-  	}
+  	},
+  getUser:function(){
+    var otherUserId = Session.get("otherUserId");
+    var user = Meteor.users.findOne({_id:otherUserId});
+    return user.profile.username;
+  }  
 });
 
 
