@@ -3,6 +3,7 @@ Accounts.config({
     sendVerificationEmail: true
 });
 */
+
 Meteor.startup(function () {
     if (!Meteor.users.findOne()){
       for (var i=1;i<9;i++){
@@ -18,7 +19,6 @@ Meteor.startup(function () {
 Accounts.onCreateUser(function(options, user) {
   // We're enforcing at least an empty profile object to avoid needing to check
   var url_avatar = "http://i1.wp.com/www.techrepublic.com/bundles/techrepubliccore/images/icons/standard/icon-user-default.png";
-  
   user.profile = {};
 
   user.profile.username= options.username;
@@ -28,4 +28,3 @@ Accounts.onCreateUser(function(options, user) {
 
   return user;
 });
-
