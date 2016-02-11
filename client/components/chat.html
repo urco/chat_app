@@ -1,14 +1,14 @@
 <template name="chat">
-	<div class="container">
+<div class="container">
 	<h5>Type in the box below to send a message!</h5>
 		<div class="row">
 			<b>Send a message to {{getUser}}</b>
-			{{#each messages}} 
-				<div class="col-md-12">
-				  {{text}}
-				</div>
-			{{/each}}
-		</div>	
+				<div class="col-md-12"> 
+				  {{#each messages}}
+					 {{text}}<br>
+				  {{/each}}
+				</div>	
+	      </div>
 		{{> insertChatMessage}}
-	</div>
+</div>
 </template>	

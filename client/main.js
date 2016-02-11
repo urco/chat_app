@@ -31,9 +31,12 @@ Template.messages.helpers({
  	},
    messages:function(){
       var chat = Chat.findOne({_id:Session.get("chatId")});
-      return Chat.find();
-    }, 
-
+      return chat.messages;
+    },
+   MyUser:function(){
+    var myUser = Meteor.userId();
+    return myUser.profile.username
+   }  
   });
 
 Template.available_user_list.helpers({
