@@ -1,3 +1,11 @@
 <template name="insertChatMessage">
-{{> quickForm collection="Chat" id="insertChatMessage" type="method" meteormethod="sendChatMessage"}}
+<!--{{> quickForm collection="Chat" id="insertChatMessage" type="method-update" meteormethod="sendChatMessage"}}-->
+ <div class="row">
+		<div class="col-md-12">
+			<form class="js-send-chat">
+			<input class="input" type="text" name="chat" placeholder="type a message here...">
+			<button class="btn btn-default">send</button>
+		</form>
+		</div>
+	</div>
 </template>

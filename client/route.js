@@ -20,6 +20,7 @@ Router.route('/chat/:user', function () {
 	this.layout('chatting');
     // the user they want to chat to has id equal to 
     // the id sent in after /chat/... 
+
     var otherUserId = this.params.user;
     Session.set("otherUserId",otherUserId);
     // find a chat that has two users that match current user id
@@ -29,17 +30,19 @@ Router.route('/chat/:user', function () {
                 {user1Id:Meteor.userId(), user2Id:otherUserId}, 
                 {user2Id:Meteor.userId(), user1Id:otherUserId}
                 ]};
+                
     var chat = Chat.findOne(filter);
-   /*if (!chat){// no chat matching the filter - need to insert a new one
+   if (!chat){// no chat matching the filter - need to insert a new one
     chatId = Chat.insert({user1Id:Meteor.userId(), user2Id:otherUserId});
-
+   
     }
     else {// there is a chat going already - use that. 
       chatId = chat._id;
+      console.log("This is the chat session: " + chatId);
     }
     if (chatId){// looking good, save the id to the session
       Session.set("chatId",chatId);
-    }*/
+    }
 
     this.render('navigation',{
     	to:"navigation"
