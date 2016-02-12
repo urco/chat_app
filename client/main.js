@@ -15,7 +15,8 @@ Template.messages.helpers({
   	  return Messages.find();
   	},
   getUser:function(){
-    var otherUserId = Session.get("otherUserId");
+    var otherUserId = Session.get("otherUserId"
+      );
     var user = Meteor.users.findOne({_id:otherUserId});
     return user.profile.username;
   }  
@@ -30,14 +31,22 @@ Template.messages.helpers({
  	  return user.profile.username;
  	},
    messages:function(){
+    if(Meteor.userId()){
       var chat = Chat.findOne({_id:Session.get("chatId")});
       return chat.messages;
+     } /*else {
+      console.log("you must be logged");
+        }*/
     },
-   MyUser:function(){
+    other_user:function(){
+      return ""
+    }/*,
+   MyUser:function(userId){
     var myUser = Meteor.userId();
     return myUser.profile.username
-   }  
+   } */ 
   });
+
 
 Template.available_user_list.helpers({
     users:function(){

@@ -32,18 +32,22 @@ Router.route('/chat/:user', function () {
                 ]};
                 
     var chat = Chat.findOne(filter);
+if(Meteor.userId()) {
+  console.log("you are logued");
    if (!chat){// no chat matching the filter - need to insert a new one
-    chatId = Chat.insert({user1Id:Meteor.userId(), user2Id:otherUserId});
-   
+        chatId = Chat.insert({user1Id:Meteor.userId(), user2Id:otherUserId});
     }
-    else {// there is a chat going already - use that. 
+   else {// there is a chat going already - use that. 
       chatId = chat._id;
       console.log("This is the chat session: " + chatId);
     }
-    if (chatId){// looking good, save the id to the session
+   if (chatId){// looking good, save the id to the session
       Session.set("chatId",chatId);
     }
-
+else {
+  console.log("you must logued to send private messages");
+  }
+}
     this.render('navigation',{
     	to:"navigation"
     });
