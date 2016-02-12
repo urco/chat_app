@@ -14,12 +14,15 @@ Template.messages.helpers({
   messages: function(){
   	  return Messages.find();
   	},
-  getUser:function(){
-    var otherUserId = Session.get("otherUserId"
-      );
-    var user = Meteor.users.findOne({_id:otherUserId});
-    return user.profile.username;
-  }  
+     getUserpic:function(userId){
+      user = Meteor.users.findOne({_id:userId});
+      if (user){
+      console.log("avatar" + user.profile.avatar);
+      return user.profile.avatar;
+      }else {
+      console.log("user not found");
+    }
+  }
 });
 
 
@@ -59,6 +62,7 @@ Template.available_user_list.helpers({
       user = Meteor.users.findOne({_id:userId});
       console.log(user.profile.avatar);
       return user.profile.avatar;
+      console.log("route pic profile");
     },
     getUsername:function(userId){
       user = Meteor.users.findOne({_id:userId});

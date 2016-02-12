@@ -1,0 +1,26 @@
+<template name="chat_messages">
+			<div>
+				 <a href="/chat/{{_id}}">
+					<img src="{{profile.avatar}}" class="message-profile-pic">
+					{{getUsername _id}}
+					<br/>
+				</a>
+				<p>{{text}}</p>
+			</div>
+</template>	
+
+<!-- 	
+{{#each messages}}		
+				  <div class="message">
+						<a class="js-user" href="/chat/{{user}}">
+							<img class="message-profile-pic" src="ava1.jpg">
+						</a>
+						<a href="/chat/{{user}}" class="message_username">{{username}}</a>
+						<span class="message_timestamp">{{createdAt}}</span>
+						<p class="message_content">{{text}}</p>
+ 				  </div>
+		      
+			{{/each}}	
+			
+-->						
+		

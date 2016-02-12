@@ -2,7 +2,7 @@
 			{{#each messages}}		
 				  <div class="message">
 						<a class="js-user" href="/chat/{{user}}">
-							<img class="message-profile-pic" src="ava1.jpg">
+							<img class="message-profile-pic" src="{{getUserpic user}}">
 						</a>
 						<a href="/chat/{{user}}" class="message_username">{{username}}</a>
 						<span class="message_timestamp">{{createdAt}}</span>
