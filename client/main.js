@@ -78,6 +78,10 @@ Template.available_user_list.helpers({
       return user.profile.avatar;
       console.log("route pic profile");
     },
+    getStatus:function(userId){
+          user = Meteor.users.findOne({_id:userId});
+          return user.status.online;
+    },
     getUsername:function(userId){
       user = Meteor.users.findOne({_id:userId});
       return user.profile.username;

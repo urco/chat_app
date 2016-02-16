@@ -83,6 +83,8 @@ p.date {
 .box {
   border: 1px solid blue
 }*/
-.users-margin-right {
-  
+.user-online {
+  color: #00BFA5;
+  font-size: 0.9rem;
+  font-weight: bold;
 }

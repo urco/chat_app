@@ -1,21 +1,18 @@
 <template name="chat">
 <div class="container">
 	<h5>Type in the box below to send a message!</h5>
-		<div class="row">
-		
+		<div class="row">	
 			<b>Send a message to {{getOtherUser}}</b>
-		{{#with chat}}	
 			{{#each messages}}
 				<div class="message">
-							<a class="js-user" href="/chat/{{user}}">
-								<img class="message-profile-pic" src="{{getUserPic user}}">
-							</a>
-							<a href="/chat/{{user}}" class="message_username">{{getUser user}}</a>
-							<span class="message_timestamp">{{createdAt}}</span>
-							<p class="message_content">{{text}}</p>
+						<a class="js-user" href="/chat/{{user}}">
+							<img class="message-profile-pic" src="{{getUserPic user}}">
+						</a>
+						<a href="/chat/{{user}}" class="message_username">{{getUser user}}</a>
+						<span class="message_timestamp">{{createdAt}}</span>
+						<p class="message_content">{{text}}</p>
 	 			</div>
-		    {{/each}} 
-		 {{/with}}    
+		    {{/each}}  
 	    </div>
 		{{> insertChatMessage}}
 </div>
