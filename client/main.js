@@ -28,26 +28,40 @@ Template.messages.helpers({
 
  Template.chat.helpers({
 
- 	getUser:function(){
+
+  getUserPic:function(userId){
+    user = Meteor.users.findOne({_id:userId});
+    console.log(user.profile.avatar);
+    return user.profile.avatar;
+    console.log("route pic profile");
+
+  },
+  getUser:function(userId){
+    user = Meteor.users.findOne({_id:userId});
+    return user.profile.username;
+
+  },
+ 	getOtherUser:function(){
  		var otherUserId = Session.get("otherUserId");
- 		var user = Meteor.users.findOne({_id:otherUserId});
- 	  return user.profile.username;
+    var user = Meteor.users.findOne({_id:otherUserId});
+    return user.profile.username;
+ 	 
  	},
+  chat:function(){
+    if(Meteor.userId()){
+      var chat = Chat.findOne({_id:Session.get("chatId")});
+      return chat;
+     }
+  },
    messages:function(){
     if(Meteor.userId()){
       var chat = Chat.findOne({_id:Session.get("chatId")});
       return chat.messages;
-     } /*else {
-      console.log("you must be logged");
-        }*/
+     }
     },
     other_user:function(){
       return ""
-    }/*,
-   MyUser:function(userId){
-    var myUser = Meteor.userId();
-    return myUser.profile.username
-   } */ 
+    }
   });
 
 
@@ -95,14 +109,14 @@ Template.available_user_list.helpers({
       // (i.e. the user) into the database?? certainly not. 
       // push adds the message to the end of the array
       console.log(chat._id);
-      msgs.push({text: event.target.chat.value});
+      msgs.push({text: event.target.chat.value,user:Meteor.userId(),createdAt: new Date()});
       // reset the form
       event.target.chat.value = "";
       // put the messages array onto the chat object
       chat.messages = msgs;
       // update the chat object in the database.
       Chat.update(chat._id, {
-        $set: {messages: chat.messages}
+        $set: {messages: chat.messages, user:Meteor.userId(), createdAt: new Date()}
       });
       //Chat.update(chat._id, chat);
   

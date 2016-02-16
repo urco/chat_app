@@ -32,6 +32,7 @@ Router.route('/chat/:user', function () {
                 ]};
                 
     var chat = Chat.findOne(filter);
+    
 if(Meteor.userId()) {
   console.log("you are logued");
    if (!chat){// no chat matching the filter - need to insert a new one
