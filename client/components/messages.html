@@ -6,9 +6,12 @@
 						</a>
 						<a href="/chat/{{user}}" class="message_username">{{username}}</a>
 						<span class="message_timestamp">{{createdAt}}</span>
+						{{#emoji}}
 						<p class="message_content">{{text}}</p>
- 				  </div>
-		      
-			{{/each}}		
+						{{/emoji}}
+ 				  </div>	
+			{{/each}}	
+
+			{{> insertMessage}}	
 </template>
 

@@ -9,3 +9,7 @@ Meteor.publish('messages', function(){
 Meteor.publish('chat', function(){
   return Chat.find();  
 });
+
+Meteor.publish('emojis', function(){
+	return Emojis.find();
+});

@@ -41,7 +41,7 @@ p.date {
   display: block;
   -moz-border-radius: 0.2rem;
   -webkit-border-radius: 0.2rem;
-  border-radius: 0.3rem;
+  border-radius: 2rem;
   width: 36px;
   height: 36px;
   /*background-image: url("http://i1.wp.com/www.techrepublic.com/bundles/techrepubliccore/images/icons/standard/icon-user-default.png");*/
@@ -88,3 +88,9 @@ p.date {
   font-size: 0.9rem;
   font-weight: bold;
 }
+.navbar {
+    text-align: right;
+  }
+/*.toast{
+    color:#2bbbad;
+  }*/

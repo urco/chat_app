@@ -10,7 +10,9 @@
 						</a>
 						<a href="/chat/{{user}}" class="message_username">{{getUser user}}</a>
 						<span class="message_timestamp">{{createdAt}}</span>
+						{{#emoji}}
 						<p class="message_content">{{text}}</p>
+						{{/emoji}}
 	 			</div>
 		    {{/each}}  
 	    </div>

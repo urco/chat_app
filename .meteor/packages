@@ -18,9 +18,10 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 
 iron:router
 accounts-password
-accounts-ui
 twbs:bootstrap
 aldeed:autoform
 aldeed:collection2
-materialize:materialize
 mizzao:user-status
+lookback:emoji
+accounts-ui
+materialize:materialize
