@@ -1,13 +1,13 @@
 Meteor.methods({
   // adding new comments
-  sendMessage:function(message){
+  sendMessage: function(message){
     if (this.userId){// we have a user
       console.log("you send a public messages");
       Messages.insert(message);
     }
   }
 
-  /*sendChatMessage:function(message){
+/*sendChatMessage:function(message){
 
   if (this.userId){
     

@@ -3,8 +3,6 @@ Accounts.ui.config({
     passwordSignupFields: 'USERNAME_AND_EMAIL'
 });
 
-
-
 // helpers 
 
 Template.user.helpers ({
@@ -123,15 +121,13 @@ Template.available_user_list.helpers({
         chat.messages = msgs;
         // update the chat object in the database.
         Chat.update(chat._id, {
-          $set: {messages: chat.messages, user:Meteor.userId(), createdAt: new Date()}
-        });
+          $set: {messages: chat.messages, user:Meteor.userId(), createdAt: new Date()}}); 
       //Chat.update(chat._id, chat);
       }
    }
    else {
         var $toastContent = $('<span class="toast-login">you need login</span>');
-        Materialize.toast($toastContent , 3000, 'rounded');
-        console.log("you are not logued")
+        Materialize.toast($toastContent , 3000);
         console.log("you must login");
     }
   }
